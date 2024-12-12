@@ -1,0 +1,101 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100%;
+    
+
+}
+.container{
+    background: url(adrien-olichon-h605cAbDm8s-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+  
+    position: relative;
+    height: 100vh;
+}
+.heading{
+    color: white;
+    
+    font-weight: 600;
+    font-size: 35px;
+    padding: 3% 4% ;
+    overflow: hidden;
+ 
+   
+}
+
+
+.heading:hover{
+
+    color: orangered;
+  
+}
+
+
+
+.content{
+  
+    padding: 12% 20% 0 10%;
+    color: whitesmoke;
+}
+.content p{
+    font-size: 20px;
+}
+.content h1{
+    font-size: 58px;
+}
+.content span{
+    color: orangered;
+} 
+.content button{
+    background: transparent;
+    border: 2px solid;
+    color: white;
+    padding: 13px 30px;
+}
+.time{
+    display: flex;
+    gap: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+.time p{
+    font-size: 50px;
+}
+.img img{
+    width: 150px;
+    overflow: hidden;
+    overflow: ;
+}
+
+.img{
+    position: absolute;
+    right: 10%;
+    bottom: 0%;
+    animation: rocket 4s linear infinite;
+    overflow: hidden;
+   
+}
+@keyframes rocket{
+    0%{
+        opacity: 0;
+        top: 80%;
+     
+    }
+    25%{top: 60%;
+        opacity: 1;
+
+    }
+    50%{
+        top: 60%;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        top: -110%;
+        
+    }
+}
