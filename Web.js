@@ -49,11 +49,15 @@ let toggle = () =>{
     if (open === "true") {
         menubox.style.display = "inline-block";
         open = "false"
+        menu.style.color = "black"
+        menu.style.border = "2px solid black"
         
         
     }else{
         menubox.style.display = "none";
         open = "true"
+        menu.style.color = "white"
+        menu.style.border = "2px solid white"
 
     }
 }

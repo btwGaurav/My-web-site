@@ -106,8 +106,8 @@ body{
     right: 2%;
     padding: 10px 5px;
     background-color: transparent;
-    border: 2px solid gray;
-    color: gray;
+    border: 2px solid whitesmoke;
+    color: white;
 }
 .menu:hover{
     scale: 1.04;
