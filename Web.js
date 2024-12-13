@@ -40,3 +40,23 @@ var x = setInterval(function() {
     document.getElementById("Minutes").innerHTML = minutes;
     document.getElementById("Seconds").innerHTML = seconds;
 }, 1000);
+
+let menu = document.querySelector(".menu")
+let menubox = document.querySelector(".menu-box")
+let open = "true"
+
+let toggle = () =>{
+    if (open === "true") {
+        menubox.style.display = "inline-block";
+        open = "false"
+        
+        
+    }else{
+        menubox.style.display = "none";
+        open = "true"
+
+    }
+}
+
+
+menu.addEventListener("click" , toggle)

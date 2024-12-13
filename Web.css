@@ -99,3 +99,45 @@ body{
         
     }
 }
+.menu{
+    position: absolute;
+    z-index: 10;
+    top: 4%;
+    right: 2%;
+    padding: 10px 5px;
+    background-color: transparent;
+    border: 2px solid gray;
+    color: gray;
+}
+.menu:hover{
+    scale: 1.04;
+}
+.menu-box{
+    position: absolute;
+    color: black;
+    background-color: black;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background: white;
+    padding:90px 30px ;
+    font-weight: 600;
+    display: none;z-index: 2;
+   
+}
+.menu-box a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.menu-box .link{    padding-top: 30px;
+    margin-top: 30px;
+}
+.menu-box .title{
+    margin-bottom: 30px;
+}
+.menu-box .link:hover{
+   
+    color: orangered;
+}
