@@ -41,26 +41,35 @@ var x = setInterval(function() {
     document.getElementById("Seconds").innerHTML = seconds;
 }, 1000);
 
-let menu = document.querySelector(".menu")
-let menubox = document.querySelector(".menu-box")
-let open = "true"
+let menu = document.querySelector(".menu");
+let menubox = document.querySelector(".menu-box");
+let body = document.body;
+let isOpen = false;
+let learn = document.querySelector(".learn")
 
-let toggle = () =>{
-    if (open === "true") {
-        menubox.style.display = "inline-block";
-        open = "false"
-        menu.style.color = "black"
-        menu.style.border = "2px solid black"
-        
-        
-    }else{
+const toggle = (e) => {
+    e.stopPropagation(); // Prevent body click event from firing
+    if (isOpen) {
         menubox.style.display = "none";
-        open = "true"
-        menu.style.color = "white"
-        menu.style.border = "2px solid white"
-
+        menu.style.color = "white";
+        menu.style.border = "2px solid white";
+    } else {
+        menubox.style.display = "inline-block";
+        menu.style.color = "black";
+        menu.style.border = "2px solid black";
     }
-}
+    isOpen = !isOpen;
+};
 
+const closeMenu = () => {
+    if (isOpen) {
+        menubox.style.display = "none";
+        menu.style.color = "white";
+        menu.style.border = "2px solid white";
+        isOpen = false;
+    }
+};
 
-menu.addEventListener("click" , toggle)
+menu.addEventListener("click", toggle);
+body.addEventListener("click", closeMenu);
+learn.addEventListener("click", toggle);
