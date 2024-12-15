@@ -253,7 +253,35 @@ body{
     }
     .img{
 
-        display: none;
+        position: absolute;
+    left: 78%;
+    bottom: 0%;
+    animation: rocket 4s linear infinite;
+    overflow: hidden;
+   
     
      }
+     @keyframes rocket{
+        0%{
+            opacity: 0;
+            top: 70%;
+         
+        }
+        25%{top: 60%;
+            opacity: 1;
+            transform: rotateY(30deg);
+    
+        }
+        50%{
+            top: 60%;
+            opacity: 1;
+            
+        }
+      
+        100%{
+            opacity: 1;
+            top: -110%;
+            transform: rotateY('100deg')
+            
+        }
 }
