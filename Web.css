@@ -109,6 +109,7 @@ body{
     background-color: transparent;
     border: 2px solid whitesmoke;
     color: white;
+    border-radius: 5px;
 }
 .menu:hover{
     scale: 1.04;
