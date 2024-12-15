@@ -251,16 +251,13 @@ body{
     .img img {
         width: 40%;
     }
-    .img{
-
-        position: absolute;
+.img{
+ position: absolute;
     left: 78%;
     bottom: 0%;
     animation: rocket 4s linear infinite;
     overflow: hidden;
-   
-    
-     }
+     };
      @keyframes rocket{
         0%{
             opacity: 0;
@@ -279,9 +276,9 @@ body{
         }
       
         100%{
-            opacity: 1;
+        opacity: 1;
             top: -110%;
-            transform: rotateY('100deg')
+           
             
         }
-}
+    }};
