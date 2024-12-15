@@ -136,7 +136,12 @@ a{
         display: grid;
     grid-template-columns: 150px 150px ;
     place-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
     }
-    
+    .seconds{
+        margin-top: 50px;
+    }
+    .date{
+        margin-top: 50px;
+    }
 }
