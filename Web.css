@@ -66,14 +66,14 @@ body{
     font-size: 50px;
 }
 .img img{
-    width: 150px;
+    width: 70%;
     overflow: hidden;
     
 }
 
 .img{
     position: absolute;
-    right: 10%;
+    left: 82%;
     bottom: 0%;
     animation: rocket 4s linear infinite;
     overflow: hidden;
