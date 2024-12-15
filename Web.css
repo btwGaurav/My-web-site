@@ -66,14 +66,14 @@ body{
     font-size: 50px;
 }
 .img img{
-    width: 70%;
+    width: 55%;
     overflow: hidden;
     
 }
 
 .img{
     position: absolute;
-    left: 82%;
+    left: 78%;
     bottom: 0%;
     animation: rocket 4s linear infinite;
     overflow: hidden;
@@ -214,9 +214,15 @@ body{
         font-size: 1rem;
         line-height: 1.6;
     }
+    .img{
+        width: 20%;
+        left: 15%;
+    }
+    
 }
 
 @media (max-width: 480px) {
+   
     .heading {
         font-size: 1.5rem;
     }
@@ -245,4 +251,9 @@ body{
     .img img {
         width: 40%;
     }
+    .img{
+
+        display: none;
+    
+     }
 }
