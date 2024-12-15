@@ -107,25 +107,32 @@ body{
     right: 2%;
     padding: 10px 5px;
     background-color: transparent;
-    border: 2px solid whitesmoke;
+    border: 2px solid white;
     color: white;
     border-radius: 5px;
 }
 .menu:hover{
     scale: 1.04;
 }
-.menu-box{
-    position: absolute;
-    color: black;
-    background-color: black;
-    height: 100vh;
+.menu-box {
+    position: fixed;
     top: 0;
     right: 0;
-    background: white;
-    padding:90px 30px ;
-    font-weight: 600;
-    display: none;z-index: 2;
-   
+    height: 100vh;
+    width: 300px; /* Adjust width as needed */
+    background-color: rgb(53, 47, 47);
+    padding: 90px 30px;
+    display: flex; /* Default hidden */
+    z-index: 1; /* Ensure it stays above other elements */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow scrolling for smaller screens */
+    transition: all 0.3s ease; /* Add smooth transition */
+    flex-direction: column;
+    font-weight: 400;
+    color: antiquewhite;
+    display: none;
+
+
 }
 .menu-box a{
     text-decoration: none;
@@ -143,6 +150,11 @@ body{
    
     color: orangered;
 }
+.menu-box a{
+    display: flex;
+    color: rgb(225, 225, 224);
+}
+
 /* Responsive Design for Modern Phones */
 @media (max-width: 768px) {
     .heading {
