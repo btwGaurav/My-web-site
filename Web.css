@@ -143,3 +143,94 @@ body{
    
     color: orangered;
 }
+/* Responsive Design for Modern Phones */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 1.8rem;
+        padding: 5% 3%;
+        text-align: center;
+    }
+
+    .content {
+        padding: 8% 5%;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+        line-height: 1.4;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    .time {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .time p {
+        font-size: 2rem;
+    }
+
+    .time span {
+        font-size: 1rem;
+    }
+
+    .img {
+        left: 50%; /* Center rocket */
+        transform: translateX(-50%);
+    }
+
+    .img img {
+        width: 50%;
+    }
+
+    .menu {
+        top: 2%;
+        right: 5%;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .menu-box {
+        padding: 60px 20px;
+    }
+
+    .menu-box a {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    .content h1 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .time p {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .menu-box a {
+        font-size: 0.9rem;
+    }
+
+    .img img {
+        width: 40%;
+    }
+}
