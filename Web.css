@@ -121,7 +121,7 @@ body{
     height: 100vh;
     width: 300px; /* Adjust width as needed */
     background-color: rgb(53, 47, 47);
-    padding: 90px 30px;
+    padding: 90px 30px 10px;
     display: flex; /* Default hidden */
     z-index: 1; /* Ensure it stays above other elements */
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
@@ -153,6 +153,7 @@ body{
 .menu-box a{
     display: flex;
     color: rgb(225, 225, 224);
+    gap: 10px;
 }
 
 /* Responsive Design for Modern Phones */
@@ -242,6 +243,7 @@ body{
     .menu {
         padding: 6px 10px;
         font-size: 0.8rem;
+        width: 180px;
     }
 
     .menu-box a {
