@@ -243,9 +243,11 @@ body{
     .menu {
         padding: 6px 10px;
         font-size: 0.8rem;
-        width: 180px;
+        
     }
-
+.menu-box{
+    width: 180px;
+}
     .menu-box a {
         font-size: 0.9rem;
     }
