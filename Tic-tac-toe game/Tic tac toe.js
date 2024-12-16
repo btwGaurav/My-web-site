@@ -58,3 +58,15 @@ const checkwinner =  () => {
     }
 }
 alert
+// Add an event listener to the button with the class 'reset'
+document.addEventListener('DOMContentLoaded', () => {
+    const resetButton = document.querySelector('.reset');
+    if (resetButton) {
+        resetButton.addEventListener('click', () => {
+            // Reload the page
+            location.reload();
+        });
+    } else {
+        console.error("No element with the class 'reset' found on the page.");
+    }
+});
