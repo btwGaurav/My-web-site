@@ -40,3 +40,31 @@ body{
     background: aliceblue;
     border-radius: 5px;
 }
+@media (max-width: 716px){
+    .main .tictactoe{
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .main  .tictactoe button{
+        height: 100px;
+        width: 100px;
+        background: aliceblue;
+            border-radius: 5px;
+            box-shadow: 0 0 2px white;
+            font-size: 100px;}
+            .main .reset{
+                font-size: 17px;
+                position: absolute;
+                top: 110%;
+                right: 37%;
+                padding: 10px 1px;
+                background: aliceblue;
+                border-radius: 5px;
+            }
+        
+    
+}
