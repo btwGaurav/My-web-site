@@ -109,7 +109,7 @@ body{
 .creator{
     position: absolute;
     top: 90%;
-    left: 75%;
+    left: 40%;
     background: black;
     color: whitesmoke;
     padding: 16px 35px;
@@ -144,4 +144,21 @@ a{
     .date{
         margin-top: 50px;
     }
+    .creator{
+        position: absolute;
+        top: 90%;
+        left: 25%;
+        background: black;
+        color: whitesmoke;
+        padding: 8px 20px;
+        border: 2px solid;
+        border-image-outset: 4px;
+      
+        border-image: linear-gradient(to right , red ,pink, blue)1;
+        margin-top:1px;
+        
+      
+    
+    }
+
 }
