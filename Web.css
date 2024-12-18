@@ -138,10 +138,10 @@ body{
     text-decoration: none;
     color: black;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 12px;
 }
 .menu-box .link{    padding-top: 30px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .menu-box .title{
     margin-bottom: 30px;
@@ -153,7 +153,7 @@ body{
 .menu-box a{
     display: flex;
     color: rgb(225, 225, 224);
-    gap: 10px;
+    gap: 0px;
 }
 
 /* Responsive Design for Modern Phones */
