@@ -5,95 +5,140 @@
 //5. check if the  user won
 // 6. give the user their winnings
 // 7. play again
-
-
 const ROWS = 3;
 const COLS = 3;
 
 const SYMBOLS_COUNT = {
-   A :2,
-   B :4,
-   C :6,
-   D :8,
-}
+  A: 2,
+  B: 4,
+  C: 6,
+  D: 8,
+};
 
-const SYMBOLE_VALUES = {
-   A :5,
-   B :4,
-   C :3,
-   D :2,
-}
+const SYMBOL_VALUES = {
+  A: 5,
+  B: 4,
+  C: 3,
+  D: 2,
+};
 
+let deposit = () => {
+  while (true) {
+    let amount = prompt("Enter your Deposit Amount");
+    let depositAmount = parseFloat(amount);
+    console.log(depositAmount);
 
-
-
-
-
-
-
-
-
-
-let despost = () =>{while(true){
-
- let amount = prompt("Enter your Deposit Amount")
-    let despostiAmount = parseFloat(amount)
-  console.log(despostiAmount)
-
-  if(isNaN(despostiAmount) || despostiAmount <= 0 ){
-    console.log("Invalid deposit amount")
-   
+    if (isNaN(depositAmount) || depositAmount <= 0) {
+      console.log("Invalid deposit amount");
+    } else {
+      return depositAmount;
+    }
   }
-  else{
-  return despostiAmount
+};
+
+let numberoflines = () => {
+  while (true) {
+    let lines = prompt("Enter the no. of lines you wanna bet on (1-3)");
+    let numberOfLines = parseFloat(lines);
+    console.log(numberOfLines);
+
+    if (isNaN(numberOfLines) || numberOfLines <= 0 || numberOfLines > 3) {
+      console.log("Invalid number of lines");
+    } else {
+      return numberOfLines;
+    }
   }
-}
+};
+
+const getbet = (balance, totallines) => {
+  while (true) {
+    let bet = prompt("Enter the Amount you wanna bet on.");
+    let betAmount = parseFloat(bet);
+    console.log(betAmount);
+
+    if (isNaN(betAmount) || betAmount <= 0 || betAmount > balance / totallines) {
+      console.log("Invalid bet amount");
+    } else {
+      return betAmount;
+    }
+  }
+};
+
+const spin = () => {
+  const symbols = [];
+  for (const [symbol, count] of Object.entries(SYMBOLS_COUNT)) {
+    for (let i = 0; i < count; i++) {
+      symbols.push(symbol);
+    }
+  }
+
+  const reels = [[], [], []];
+  for (let i = 0; i < COLS; i++) {
+    const reelSymbols = [...symbols];
+    for (let j = 0; j < ROWS; j++) {
+      const randomIndex = Math.floor(Math.random() * reelSymbols.length);
+      const selectedSymbol = reelSymbols[randomIndex];
+      reels[i].push(selectedSymbol);
+      reelSymbols.splice(randomIndex, 1);
+    }
+  }
+
+  return reels;
+};
+const transpose = (reels) => {
+  const rows = [];
+  for (let i = 0; i < ROWS; i++) {
+    rows.push([]);
+    for (let j = 0; j < COLS; j++) {
+      rows[i].push(reels[j][i]);
+    }
+  }
+  return rows;
+};
+
+const printRows = (rows) => {
+  for (const row of rows){
+    let rowstring = "";
+    for (const [i, symbol] of row.entries()) {
+
+    rowstring += symbol
+    if (i != row.length - 1) {
+      rowstring += " | ";
+    }
+    
+    }
+    console.log(rowstring)
+  }
+
 }
 
-let numberoflines = () => {while(true){
-    let lines = prompt("Enter the no. of lines you wanna bet on Between (1-3)")
-    let numberoflines = parseFloat(lines)
-  console.log(lines)
+const getWinnings = (rows , bet ,lines) =>{
+  let winnings = 0;
+  for (let row = 0 ; row < lines; row++){
+    const symbols = rows[row];
+    let allSame = true ;
 
-  if(isNaN(numberoflines) || numberoflines <= 0  || numberoflines > 3){
-    console.log("Invalid Numbers of linet")
-  }else{
-      return numberoflines
+
+    for(const symbol of symbols[0]){
+      if (symbol != symbols[0]) {
+        allSame = false;
+      break;
       }
-
-}}
-
-
-const getbet = (balance , totallines) =>{while(true){
-    let bet = prompt("Enter the Amount you wanna bet on.")
-    let betamount = parseFloat(bet)
-  console.log(betamount)
-
-  if(isNaN(betamount) || betamount <= 0  || betamount > balance / totallines) {
-    console.log("Invalid bet amount" )
-  }else{
-      return betamount
-      }
-
-}}
-
-const spin = () =>{
-  const symboles = [];
-  for (const [symbol , count] of Object.entries(SYMBOLS_COUNT)){
-   console.log(symbol , count)
-
+      
+    }
+    if (allSame){
+      winnings += bet * s
+    }
   }
 }
 
-let balance = despost();
+
+// Main logic
+let balance = deposit();
 let totallines = numberoflines();
 let bet = getbet(balance, totallines);
-
-spin(); // Keep only spin here, if needed.
-
-
-
-
-despost();
-numberoflines();
-getbet(balance,totallines);
+const reels = spin();
+const rows = transpose(reels);
+console.log( reels);
+console.log(rows)
+printRows(rows)
