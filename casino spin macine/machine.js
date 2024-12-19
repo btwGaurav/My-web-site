@@ -127,18 +127,64 @@ const getWinnings = (rows , bet ,lines) =>{
       
     }
     if (allSame){
-      winnings += bet * s
+      winnings += bet * SYMBOL_VALUES[symbols[0]]
     }
   }
+  return winnings
 }
 
 
-// Main logic
-let balance = deposit();
-let totallines = numberoflines();
-let bet = getbet(balance, totallines);
-const reels = spin();
-const rows = transpose(reels);
-console.log( reels);
-console.log(rows)
-printRows(rows)
+// Update the current balance in the HTML
+const updateBalance = (balance) => {
+  const balanceElement = document.querySelector(".currentbalance");
+  balanceElement.textContent = `Balance: $${balance}`;
+};
+
+// Update the winnings in the HTML
+const updateWinnings = (winnings) => {
+  const winningsElement = document.querySelector(".winnings");
+  winningsElement.textContent = `You won: $${winnings}`;
+};
+
+// Update the boxes with the current spin result
+const updateBoxes = (rows) => {
+  const boxes = document.querySelectorAll(".box");
+  let boxIndex = 0;
+  rows.forEach((row) => {
+    row.forEach((symbol) => {
+      boxes[boxIndex].textContent = symbol;
+      boxIndex++;
+    });
+  });
+};
+
+// Main game logic
+const game = () => {
+  let balance = deposit();
+
+  while (true) {
+    updateBalance(balance);
+
+    let totallines = numberoflines();
+    let bet = getbet(balance, totallines);
+    balance -= bet * totallines;
+
+    const reels = spin();
+    const rows = transpose(reels);
+    updateBoxes(rows); // Update spin results in the boxes
+
+    const winnings = getWinnings(rows, bet, totallines);
+    balance += winnings;
+    updateWinnings(winnings); // Update winnings in the HTML
+    updateBalance(balance); // Update balance in the HTML
+
+    if (balance <= 0) {
+      alert("You ran out of money.");
+      break;
+    }
+
+    const playAgain = prompt("Do you want to play again? (y/n)?");
+    if (playAgain.toLowerCase() !== "y") break;
+  }
+};
+
