@@ -183,8 +183,6 @@ const game = () => {
       break;
     }
 
-    const playAgain = prompt("Do you want to play again? (y/n)?");
-    if (playAgain.toLowerCase() !== "y") break;
   }
 };
 
