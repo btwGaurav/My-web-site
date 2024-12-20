@@ -198,7 +198,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6%;
+    gap: 16%;
     
     
 }
@@ -215,4 +215,9 @@ a{
     position: relative;
     margin-top: 20px;
     
+}
+
+.text2:hover{
+    scale: 1.08;
+    color: rgb(233, 127, 78);
 }
