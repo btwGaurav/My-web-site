@@ -58,3 +58,10 @@ let mode = () => {
 };
 
 mode();
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        checkhweather(searchbox.value);
+      // Add your logic here
+    }
+  });
+  
