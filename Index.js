@@ -7,6 +7,22 @@ const hours = now.getHours();
 const minutes = now.getMinutes();
 const seconds = now.getSeconds();
 
+document.getElementById("switch-css").addEventListener("click", function() {
+    const link = document.getElementById("theme-stylesheet");
+    const currentHref = link.getAttribute("href");
+
+    // Switch to a different stylesheet
+    if (currentHref === "index2.css") {
+        link.setAttribute("href", "index.css");
+    } else {
+        link.setAttribute("href", "index2.css");
+    }
+});
+
+
+
+
+
 const toggle = (e) => {
     e.stopPropagation(); // Prevent body click event from firing
     if (isOpen) {

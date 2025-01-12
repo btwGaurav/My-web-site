@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+
+}
+
+.header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.photo {
+    /* Add styles for the photo section */
+}
+
+.slide {
+    background: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.link {
+    color: #333;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.content {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.about {
+    background: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.time {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.clock .white {
+    display: inline-block;
+    padding: 10px;
+    background: #fff;
+    color: #333;
+    margin: 5px;
+}
+#switch-css{
+    position: absolute;
+    right: 45px;
+    top : 45px;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 17px ;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 15px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 5;
+}

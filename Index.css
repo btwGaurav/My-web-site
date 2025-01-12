@@ -334,8 +334,24 @@ body{
     }
     .slide {
         padding: 5px;
+        height: 100vh;
+        width: 100vw;
     }
     .section a {
         font-size: 14px;
     }
+}
+#switch-css{
+    position: absolute;
+    left : 130px;
+    top : 25px;
+    color: rgb(151, 145, 145);
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 17px ;
+    border: 2px solid rgb(151, 145, 145);
+    padding: 15px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 5;
 }
