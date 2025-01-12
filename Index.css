@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=REM:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Funnel+Display:wght@300..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=REM:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 *{
@@ -172,6 +174,7 @@ body{
     width: 100%;
 }
 .time{
+    font-family: JetBrains;
     margin-top: 60px ;
     display: flex;
     justify-content: center;
@@ -181,6 +184,7 @@ body{
     display: flex;
 }
 .time h1{
+    font-family:serif;
     font-size: 26px;
     text-align: center;
     margin-bottom: 10px;
@@ -192,5 +196,43 @@ body{
     font-size: 30px;
     text-align: center ;
     margin-left: 60px;
+    
 
+}
+.white:hover{
+    scale: 1.1;
+    color: orangered;
+    border: 2px solid white;
+
+}
+.hours{
+    width: 110px;
+    margin-right: -10px;
+}
+.hours span{
+    font-size: 17px;
+}
+.seconds{ 
+  animation: sec 4s ease-in-out infinite ;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+@keyframes sec {
+    0%{
+        transform: rotatez(0deg);
+    }
+    25%{
+        transform: rotatez(90deg);
+    }
+    50%{
+        transform: rotatez(180deg);
+        transform: rotatey(180deg);
+       
+    }
+    75%{
+        transform: rotatez(270deg);
+    }
+    100%{
+        transform: rotatez(360deg);
+    }
 }
