@@ -118,7 +118,7 @@ body{
 
 .content{
     padding-left: 7% ;
-    padding-top: 110px;
+    padding-top: 100px;
 
 }
 .content h3 a{
@@ -136,7 +136,7 @@ body{
 }
 .Hello{
     color: rgb(124, 131, 138);
-    font-size: 37px;
+    font-size: 46px;
 }
 .container h1 span{
     color: orangered;
@@ -174,7 +174,7 @@ body{
     width: 100%;
 }
 .time{
-    font-family: JetBrains;
+    font-family: poppins;
     margin-top: 60px ;
     display: flex;
     justify-content: center;
@@ -184,10 +184,11 @@ body{
     display: flex;
 }
 .time h1{
-    font-family:serif;
+    font-family:poppins;
     font-size: 26px;
     text-align: center;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 .white{
     height: 70px;
@@ -196,6 +197,7 @@ body{
     font-size: 30px;
     text-align: center ;
     margin-left: 60px;
+    border-radius: 10px;
     
 
 }
@@ -213,26 +215,25 @@ body{
     font-size: 17px;
 }
 .seconds{ 
-  animation: sec 4s ease-in-out infinite ;
+  animation: sec 1s ease-in-out infinite ;
   border: 2px solid white;
-  border-radius: 10px;
+  
 }
 @keyframes sec {
     0%{
-        transform: rotatez(0deg);
+   
     }
-    25%{
-        transform: rotatez(90deg);
+    40%{
+        scale: 1;
     }
-    50%{
-        transform: rotatez(180deg);
-        transform: rotatey(180deg);
-       
-    }
-    75%{
-        transform: rotatez(270deg);
+   45%{
+    scale: 1.05;
+   }
+    55%{
+    scale: 1;
     }
     100%{
-        transform: rotatez(360deg);
+
+        
     }
 }
