@@ -12,10 +12,12 @@ document.getElementById("switch-css").addEventListener("click", function() {
     const currentHref = link.getAttribute("href");
 
     // Switch to a different stylesheet
-    if (currentHref === "index2.css") {
-        link.setAttribute("href", "index.css");
-    } else {
+    if (currentHref === "index.css") {
         link.setAttribute("href", "index2.css");
+    } else if(currentHref === "index2.css"){
+        link.setAttribute("href", "index3.css");
+    }else{
+        link.setAttribute("href", "index.css");
     }
 });
 
