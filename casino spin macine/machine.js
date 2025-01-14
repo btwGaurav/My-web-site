@@ -1,10 +1,3 @@
-// 1. deposit some money 
-// 2. Determine number of lines to bet on
-// 3. collect the bet ammount
-// 4. spin the slot machine
-//5. check if the  user won
-// 6. give the user their winnings
-// 7. play again
 const ROWS = 3;
 const COLS = 3;
 
@@ -22,48 +15,49 @@ const SYMBOL_VALUES = {
   D: 2,
 };
 
-let deposit = () => {
+// Prompt for deposit amount
+const deposit = () => {
   while (true) {
-    let amount = prompt("Enter your Deposit Amount");
-    let depositAmount = parseFloat(amount);
-    console.log(depositAmount);
+    const amount = window.prompt("Enter your deposit amount:");
+    const depositAmount = parseFloat(amount);
 
     if (isNaN(depositAmount) || depositAmount <= 0) {
-      console.log("Invalid deposit amount");
+      alert("Invalid deposit amount. Please try again.");
     } else {
       return depositAmount;
     }
   }
 };
 
-let numberoflines = () => {
+// Prompt for number of lines to bet on
+const numberOfLines = () => {
   while (true) {
-    let lines = prompt("Enter the no. of lines you wanna bet on (1-3)");
-    let numberOfLines = parseFloat(lines);
-    console.log(numberOfLines);
+    const lines = window.prompt("Enter the number of lines to bet on (1-3):");
+    const numberOfLines = parseInt(lines);
 
-    if (isNaN(numberOfLines) || numberOfLines <= 0 || numberOfLines > 3) {
-      console.log("Invalid number of lines");
+    if (isNaN(numberOfLines) || numberOfLines < 1 || numberOfLines > 3) {
+      alert("Invalid number of lines. Please enter a number between 1 and 3.");
     } else {
       return numberOfLines;
     }
   }
 };
 
-const getbet = (balance, totallines) => {
+// Prompt for bet amount
+const getBet = (balance, totalLines) => {
   while (true) {
-    let bet = prompt("Enter the Amount you wanna bet on.");
-    let betAmount = parseFloat(bet);
-    console.log(betAmount);
+    const bet = window.prompt(`Enter your bet amount (Max: ${balance / totalLines}):`);
+    const betAmount = parseFloat(bet);
 
-    if (isNaN(betAmount) || betAmount <= 0 || betAmount > balance / totallines) {
-      console.log("Invalid bet amount");
+    if (isNaN(betAmount) || betAmount <= 0 || betAmount > balance / totalLines) {
+      alert("Invalid bet amount. Please try again.");
     } else {
       return betAmount;
     }
   }
 };
 
+// Generate random slot machine spin
 const spin = () => {
   const symbols = [];
   for (const [symbol, count] of Object.entries(SYMBOLS_COUNT)) {
@@ -72,87 +66,67 @@ const spin = () => {
     }
   }
 
-  const reels = [[], [], []];
+  const reels = [];
   for (let i = 0; i < COLS; i++) {
     const reelSymbols = [...symbols];
+    const reel = [];
     for (let j = 0; j < ROWS; j++) {
       const randomIndex = Math.floor(Math.random() * reelSymbols.length);
-      const selectedSymbol = reelSymbols[randomIndex];
-      reels[i].push(selectedSymbol);
+      reel.push(reelSymbols[randomIndex]);
       reelSymbols.splice(randomIndex, 1);
     }
+    reels.push(reel);
   }
 
   return reels;
 };
+
+// Transpose reels to rows
 const transpose = (reels) => {
   const rows = [];
   for (let i = 0; i < ROWS; i++) {
-    rows.push([]);
-    for (let j = 0; j < COLS; j++) {
-      rows[i].push(reels[j][i]);
-    }
+    const row = reels.map((reel) => reel[i]);
+    rows.push(row);
   }
   return rows;
 };
 
+// Print rows in the console
 const printRows = (rows) => {
-  for (const row of rows){
-    let rowstring = "";
-    for (const [i, symbol] of row.entries()) {
+  rows.forEach((row) => {
+    console.log(row.join(" | "));
+  });
+};
 
-    rowstring += symbol
-    if (i != row.length - 1) {
-      rowstring += " | ";
-    }
-    
-    }
-    console.log(rowstring)
-  }
-
-}
-
-const getWinnings = (rows , bet ,lines) =>{
+// Calculate winnings
+const getWinnings = (rows, bet, lines) => {
   let winnings = 0;
-  for (let row = 0 ; row < lines; row++){
+  for (let row = 0; row < lines; row++) {
     const symbols = rows[row];
-    let allSame = true ;
-
-
-    for(const symbol of symbols[0]){
-      if (symbol != symbols[0]) {
-        allSame = false;
-      break;
-      }
-      
-    }
-    if (allSame){
-      winnings += bet * SYMBOL_VALUES[symbols[0]]
+    if (symbols.every((symbol) => symbol === symbols[0])) {
+      winnings += bet * SYMBOL_VALUES[symbols[0]];
     }
   }
-  return winnings
-}
+  return winnings;
+};
 
-
-// Update the current balance in the HTML
+// Update HTML elements
 const updateBalance = (balance) => {
   const balanceElement = document.querySelector(".currentbalance");
-  balanceElement.textContent = `Balance: $${balance}`;
+  if (balanceElement) balanceElement.textContent = `Balance: $${balance}`;
 };
 
-// Update the winnings in the HTML
 const updateWinnings = (winnings) => {
   const winningsElement = document.querySelector(".winnings");
-  winningsElement.textContent = `You won: $${winnings}`;
+  if (winningsElement) winningsElement.textContent = `You won: $${winnings}`;
 };
 
-// Update the boxes with the current spin result
 const updateBoxes = (rows) => {
   const boxes = document.querySelectorAll(".box");
   let boxIndex = 0;
   rows.forEach((row) => {
     row.forEach((symbol) => {
-      boxes[boxIndex].textContent = symbol;
+      if (boxes[boxIndex]) boxes[boxIndex].textContent = symbol;
       boxIndex++;
     });
   });
@@ -165,24 +139,29 @@ const game = () => {
   while (true) {
     updateBalance(balance);
 
-    let totallines = numberoflines();
-    let bet = getbet(balance, totallines);
-    balance -= bet * totallines;
+    const totalLines = numberOfLines();
+    const bet = getBet(balance, totalLines);
+    balance -= bet * totalLines;
 
     const reels = spin();
     const rows = transpose(reels);
-    updateBoxes(rows); // Update spin results in the boxes
+    printRows(rows);
+    updateBoxes(rows);
 
-    const winnings = getWinnings(rows, bet, totallines);
+    const winnings = getWinnings(rows, bet, totalLines);
     balance += winnings;
-    updateWinnings(winnings); // Update winnings in the HTML
-    updateBalance(balance); // Update balance in the HTML
+
+    updateWinnings(winnings);
+    updateBalance(balance);
 
     if (balance <= 0) {
-      alert("You ran out of money.");
+      alert("You ran out of money!");
       break;
     }
 
+    const playAgain = window.confirm("Do you want to play again?");
+    if (!playAgain) break;
   }
 };
 
+game();
