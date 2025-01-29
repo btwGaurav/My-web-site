@@ -1,0 +1,293 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100%;
+    position: relative;
+    
+
+}
+.container{
+    background: url(adrien-olichon-h605cAbDm8s-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+  
+    position: relative;
+    height: 100vh;
+}
+.heading{
+    color: white;
+    
+    font-weight: 600;
+    font-size: 35px;
+    padding: 3% 4% ;
+    overflow: hidden;
+ 
+   
+}
+
+
+.heading:hover{
+
+    color: orangered;
+  
+}
+
+
+
+.content{
+  
+    padding: 12% 20% 0 10%;
+    color: whitesmoke;
+}
+.content p{
+    font-size: 20px;
+}
+.content h1{
+    font-size: 58px;
+}
+.content span{
+    color: orangered;
+} 
+.content button{
+    background: transparent;
+    border: 2px solid;
+    color: white;
+    padding: 13px 30px;
+}
+.time{
+    display: flex;
+    gap: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+.time p{
+    font-size: 50px;
+}
+.img img{
+    width: 55%;
+    overflow: hidden;
+    
+}
+
+.img{
+    position: absolute;
+    left: 78%;
+    bottom: 0%;
+    animation: rocket 4s linear infinite;
+    overflow: hidden;
+   
+}
+@keyframes rocket{
+    0%{
+        opacity: 0;
+        top: 80%;
+     
+    }
+    25%{top: 60%;
+        opacity: 1;
+
+    }
+    50%{
+        top: 60%;
+        opacity: 1;
+    }
+  
+    100%{
+        opacity: 1;
+        top: -110%;
+        
+    }
+}
+.menu{
+    position: absolute;
+    z-index: 10;
+    top: 4%;
+    right: 2%;
+    padding: 10px 5px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+}
+.menu:hover{
+    scale: 1.04;
+}
+.menu-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px; /* Adjust width as needed */
+    background-color: rgb(53, 47, 47);
+    padding: 90px 30px 10px;
+    display: flex; /* Default hidden */
+    z-index: 1; /* Ensure it stays above other elements */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow scrolling for smaller screens */
+    transition: all 0.3s ease; /* Add smooth transition */
+    flex-direction: column;
+    font-weight: 400;
+    color: antiquewhite;
+    display: none;
+
+
+}
+.menu-box a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    margin-top: 12px;
+}
+.menu-box .link{    padding-top: 30px;
+    margin-top: 1px;
+}
+.menu-box .title{
+    margin-bottom: 10px;
+}
+.menu-box .link:hover{
+   
+    color: orangered;
+}
+.menu-box a{
+    display: flex;
+    color: rgb(225, 225, 224);
+    gap: 0px;
+}
+
+/* Responsive Design for Modern Phones */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 1.8rem;
+        padding: 5% 3%;
+        text-align: center;
+    }
+
+    .content {
+        padding: 8% 5%;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+        line-height: 1.4;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    .time {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .time p {
+        font-size: 2rem;
+    }
+
+    .time span {
+        font-size: 1rem;
+    }
+
+    .img {
+        left: 50%; /* Center rocket */
+        transform: translateX(-50%);
+    }
+
+    .img img {
+        width: 50%;
+    }
+
+    .menu {
+        top: 2%;
+        right: 5%;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .menu-box {
+        padding: 60px 20px;
+    }
+
+    .menu-box a {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .img{
+        width: 20%;
+        left: 15%;
+    }
+    
+}
+
+@media (max-width: 480px) {
+   
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    .content h1 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .time p {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        
+    }
+.menu-box{
+    width: 180px;
+}
+    .menu-box a {
+        font-size: 0.9rem;
+    }
+
+    .img img {
+        width: 40%;
+    }
+.img{
+ position: absolute;
+    left: 78%;
+    bottom: 0%;
+    animation: rocket 4s linear infinite;
+    overflow: hidden;
+     };
+     @keyframes rocket{
+        0%{
+            opacity: 0;
+            top: 70%;
+         
+        }
+        25%{top: 60%;
+            opacity: 1;
+            transform: rotateY(30deg);
+    
+        }
+        50%{
+            top: 60%;
+            opacity: 1;
+            
+        }
+      
+        100%{
+        opacity: 1;
+            top: -110%;
+           
+            
+        }
+    }};
+    .game{
+        color: aliceblue;
+        background: black;
+    }
